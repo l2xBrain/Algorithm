@@ -23,7 +23,6 @@ void merge(int *arr, unsigned int first, unsigned int middle, unsigned int last)
     int lIndex = 0;
     int rIndex = 0;
     for (int i = 0; i < len; i++) {
-        printf("lleft: %d right: %d\n", left[lIndex], right[rIndex]);
         if (left[lIndex] > right[rIndex]) {
             arr[i] = right[rIndex];
             rIndex++;
