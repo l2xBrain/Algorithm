@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <limits.h>
 void merge_sort(int *arr, unsigned int first, unsigned int last);
 void merge(int *arr, unsigned int first, unsigned int middle, unsigned int last);
 

@@ -1,39 +1,39 @@
 //
-//  main.c
-//  Algorithm
+//  index.c
+//  归并排序算法,采用的是分治法(有三个步骤:分解,解决，合并)
 //
 //  Created by 刘力瑄 on 2018/3/22.
 //  Copyright © 2018年 Alexander. All rights reserved.
 //
 
 #include "index.h"
-
+// 解决, 合并
 void merge(int *arr, unsigned int first, unsigned int middle, unsigned int last){
-    int *left = (int*)malloc((middle-first+2)*sizeof(int));
-    int *right = (int*)malloc((last-middle+1)*sizeof(int));
-    for (int i = first; i <= middle; i++) {
-        left[i] = arr[i];
+    int n1 = middle - first + 1;
+    int n2 = last - middle;
+    int *left = (int*)malloc((n1+1)*sizeof(int)); // 最后一个位置给哨兵
+    int *right = (int*)malloc((n2+1)*sizeof(int)); // 最后一个位置给哨兵
+    for (int i = 0; i < n1; i++) {
+        left[i] = arr[first + i];
     }
-    for (int j = middle+1; j <= last; j++) {
-        right[j] = arr[j];
+    for (int j = 0; j < n2; j++) {
+        right[j] = arr[middle + 1 + j];
     }
-    left[middle-first+1] = INFINITY;
-    right[last-middle] = INFINITY;
-    int len = last - first + 1;
+    left[n1] = INT_MAX;
+    right[n2] = INT_MAX;
     int lIndex = 0;
     int rIndex = 0;
-    for (int i = 0; i < len; i++) {
+    for (int i = first; i <= last; i++) {
         if (left[lIndex] > right[rIndex]) {
             arr[i] = right[rIndex];
             rIndex++;
-        }
-        if (right[rIndex] > left[lIndex]) {
+        } else {
             arr[i] = left[lIndex];
             lIndex++;
         }
     }
 }
-
+// 分解
 void merge_sort(int *arr, unsigned int first, unsigned int last){
     int middle = 0;
     if (first < last) {
@@ -42,9 +42,13 @@ void merge_sort(int *arr, unsigned int first, unsigned int last){
         merge_sort(arr, middle+1, last);
         merge(arr, first, middle, last);
     }
+    return;
 }
 
 int main(){
+//    测试merge函数
+//    int arr[] = {1,2,3,4,5,6,3,4,5,6,7};
+//    merge(arr, 0, 5, 10);
     int arr[] = {4,3,5,7,8,9,2,3,0,1};
     int len = sizeof(arr)/sizeof(int);
     merge_sort(arr, 0, len-1);
