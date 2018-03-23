@@ -19,8 +19,8 @@ void merge(int *arr, unsigned int first, unsigned int middle, unsigned int last)
     for (int j = 0; j < n2; j++) {
         right[j] = arr[middle + 1 + j];
     }
-    left[n1] = INT_MAX;
-    right[n2] = INT_MAX;
+    left[n1] = INT_MAX;  // 添加哨兵
+    right[n2] = INT_MAX;  // 添加哨兵
     int lIndex = 0;
     int rIndex = 0;
     for (int i = first; i <= last; i++) {
@@ -44,7 +44,7 @@ void merge_sort(int *arr, unsigned int first, unsigned int last){
     }
     return;
 }
-
+/*
 int main(){
 //    测试merge函数
 //    int arr[] = {1,2,3,4,5,6,3,4,5,6,7};
@@ -57,3 +57,4 @@ int main(){
     }
     return 0;
 }
+*/

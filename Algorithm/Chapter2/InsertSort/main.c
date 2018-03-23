@@ -23,15 +23,15 @@ void insertSort(int *arr, int len){
         arr[j + 1] = key;
     }
 }
-
-//int main(int argc, const char * argv[]) {
-//    int arr[] = {1,9,2,8,3,8,4,7,5,6};
-//    int len;
-//    GET_ARRAY_LEN(arr, len);
-//    insertSort(arr, len);
-//    for (int i = 0; i < sizeof(arr) / sizeof(int); i++) {
-//        printf("%d\n", arr[i]);
-//    }
-//    return 0;
-//}
-
+/*
+int main(int argc, const char * argv[]) {
+    int arr[] = {1,9,2,8,3,8,4,7,5,6};
+    int len;
+    GET_ARRAY_LEN(arr, len);
+    insertSort(arr, len);
+    for (int i = 0; i < sizeof(arr) / sizeof(int); i++) {
+        printf("%d\n", arr[i]);
+    }
+    return 0;
+}
+*/
