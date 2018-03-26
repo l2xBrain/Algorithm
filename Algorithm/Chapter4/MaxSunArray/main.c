@@ -65,10 +65,11 @@ Info find_maximum_subarray(int *arr, int low, int high){
 }
 
 
-int main(){
-    int arr[] = {1,2,-3,-6,3,7,9,-8,6};
-    int len = sizeof(arr)/sizeof(int);
-    Info result = find_maximum_subarray(arr, 0, len - 1);
-    printf("i: %d, j: %d, result: %d", result.lowIndex, result.highIndex, result.value);
-    return 0;
-}
+//int main(){
+//    int arr[] = {1,2,-3,-6,3,7,9,-8,6};
+//    int len = sizeof(arr)/sizeof(int);
+//    Info result = find_maximum_subarray(arr, 0, len - 1);
+//    printf("i: %d, j: %d, result: %d", result.lowIndex, result.highIndex, result.value);
+//    return 0;
+//}
+
